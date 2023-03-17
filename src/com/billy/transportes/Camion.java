@@ -1,14 +1,23 @@
 package com.billy.transportes;
 
 import javax.swing.*;
-
+/**
+ * Clase para objetos Transporte tipo Camion
+ */
 public class Camion implements ITransportes {
     private Integer cp;
     private Float dimensionX;
     private Float dimensionY;
     private Float dimensionZ;
     private Float peso;
-
+    /**
+     *
+     * @param cp Codigo postal
+     * @param dimensionX Dimension X del producto a enviar
+     * @param dimensionY Dimension Y del producto a enviar
+     * @param dimensionZ Dimension Z del producto a enviar
+     * @param peso Peso del producto a enviar
+     */
     public Camion(Integer cp, Float dimensionX, Float dimensionY, Float dimensionZ, Float peso) {
         this.cp = cp;
         this.dimensionX = dimensionX;
@@ -16,7 +25,10 @@ public class Camion implements ITransportes {
         this.dimensionZ = dimensionZ;
         this.peso = peso;
     }
-
+    /**
+     * @param cp -> dar un Codigo Postal
+     * @return coste total del envio
+     */
     @Override
     public Float costeTotal(Integer cp) {
         while (cp > 37000 || cp < 36000){
@@ -36,7 +48,13 @@ public class Camion implements ITransportes {
         }
         return precio;
     }
-
+    /**
+     * @param dimensionX -> Las dimensiones ancho
+     * @param dimensionY -> Las dimensiones largo
+     * @param dimensionZ -> Las dimensiones alto
+     * @param peso -> peso
+     * @return Tipo de embalaje que se usara en el envio
+     */
     @Override
     public Integer tipoEmbalaje(Float dimensionX, Float dimensionY, Float dimensionZ, Float peso) {
         Integer numero = null;
